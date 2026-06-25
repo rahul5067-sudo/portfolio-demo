@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rahul Kumar — Full Stack Developer. Building scalable web applications that deliver real impact." />
+  <meta name="keywords" content="Rahul Kumar, Full Stack Developer, Frontend Developer, Backend Developer, React, Node.js, Express.js" />
+  <meta name="author" content="Rahul Kumar" />
+  <title>Rahul Kumar — Full Stack Developer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════ SCROLL PROGRESS ═══════════════════ -->
+  <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-label="Reading progress"></div>
+
+  <!-- ═══════════════════ NAVBAR ═══════════════════ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" aria-label="Rahul Kumar - Home">
+        <span class="logo-bracket">&lt;</span>RK<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navMenu" role="list">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section id="home" class="hero" aria-label="Introduction">
+    <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Rahul Kumar</h1>
+        <div class="hero-typing-wrapper" aria-live="polite" aria-label="Role">
+          <span class="hero-typing-prefix">I'm a </span>
+          <span class="hero-typing" id="typingText"></span>
+          <span class="cursor" aria-hidden="true">|</span>
+        </div>
+        <p class="hero-tagline">Building Scalable Web Applications That Deliver Real Impact.</p>
+
+        <div class="hero-cta" role="group" aria-label="Call to action">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fas fa-code" aria-hidden="true"></i> View Projects
+          </a>
+          <a href="resume.pdf" class="btn btn-secondary" download aria-label="Download Resume PDF">
+            <i class="fas fa-download" aria-hidden="true"></i> Download Resume
+          </a>
+          <a href="#contact" class="btn btn-ghost">
+            <i class="fas fa-envelope" aria-hidden="true"></i> Contact Me
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper" aria-label="Profile image">
+        <div class="hero-image-glow" aria-hidden="true"></div>
+        <div class="hero-image-ring" aria-hidden="true"></div>
+        <div class="hero-image">
+  <img src="rahul2.jpeg" alt="Rahul Yadav">
+</div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ ABOUT ═══════════════════ -->
+  <section id="about" class="section about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Who I Am</p>
+        <h2 class="section-title" id="about-heading">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card glass-card" data-aos>
+          <div class="about-card-icon"><i class="fas fa-user-astronaut" aria-hidden="true"></i></div>
+          <h3>Who I Am</h3>
+          <p>Hey, I'm Rahul. I'm a Frontend & Backend Developer passionate about building modern, responsive, and user-friendly web applications. I enjoy turning ideas into reality using HTML, CSS, JavaScript, Node.js, and Express.js. Whether it's crafting engaging user interfaces or developing robust backend systems, I love creating seamless digital experiences that solve real-world problems.</p>
+        </div>
+
+        <div class="about-card glass-card" data-aos>
+          <div class="about-card-icon"><i class="fas fa-bullseye" aria-hidden="true"></i></div>
+          <h3>My Goal</h3>
+          <p>My goal is to become a skilled Full Stack Developer and build innovative web applications that solve real-world problems. I aim to continuously learn new technologies, improve my development skills, and create impactful digital experiences.</p>
+        </div>
+
+        <div class="about-card glass-card" data-aos>
+          <div class="about-card-icon"><i class="fas fa-rocket" aria-hidden="true"></i></div>
+          <h3>Career Objective</h3>
+          <p>Aspiring Full Stack Developer with expertise in HTML, CSS, JavaScript, Node.js, and Express.js. Seeking opportunities to contribute to challenging projects, expand my technical knowledge, and develop scalable, user-focused web applications.</p>
+        </div>
+      </div>
+
+      <div class="achievements" aria-label="Achievements">
+        <h3 class="achievements-title">Key Achievements</h3>
+        <div class="achievements-grid">
+          <div class="achievement-item" data-aos>
+            <span class="achievement-icon"><i class="fas fa-award" aria-hidden="true"></i></span>
+            <span>Self-Taught Full Stack Developer</span>
+          </div>
+          <div class="achievement-item" data-aos>
+            <span class="achievement-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></span>
+            <span>Built Multiple Full Stack Projects</span>
+          </div>
+          <div class="achievement-item" data-aos>
+            <span class="achievement-icon"><i class="fas fa-code-branch" aria-hidden="true"></i></span>
+            <span>Strong Foundation in Frontend & Backend</span>
+          </div>
+          <div class="achievement-item" data-aos>
+            <span class="achievement-icon"><i class="fas fa-sync-alt" aria-hidden="true"></i></span>
+            <span>Continuously Learning New Technologies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SKILLS ═══════════════════ -->
+  <section id="skills" class="section skills" aria-labelledby="skills-heading">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">What I Know</p>
+        <h2 class="section-title" id="skills-heading">Skills</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-group glass-card" data-aos>
+          <h3 class="skill-group-title">
+            <i class="fas fa-laptop-code" aria-hidden="true"></i> Frontend
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span>HTML5</span><span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="HTML5 proficiency 90%">
+                <div class="skill-fill" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span>CSS3</span><span class="skill-pct">85%</span></div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="CSS3 proficiency 85%">
+                <div class="skill-fill" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span>JavaScript</span><span class="skill-pct">80%</span></div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript proficiency 80%">
+                <div class="skill-fill" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span>React</span><span class="skill-pct">70%</span></div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="React proficiency 70%">
+                <div class="skill-fill" data-width="70"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group glass-card" data-aos>
+          <h3 class="skill-group-title">
+            <i class="fas fa-server" aria-hidden="true"></i> Backend
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-meta"><span>Node.js</span><span class="skill-pct">78%</span></div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="Node.js proficiency 78%">
+                <div class="skill-fill" data-width="78"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta"><span>Express.js</span><span class="skill-pct">75%</span></div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Express.js proficiency 75%">
+                <div class="skill-fill" data-width="75"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group glass-card" data-aos>
+          <h3 class="skill-group-title">
+            <i class="fas fa-database" aria-hidden="true"></i> Database
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-meta"><span>MongoDB</span><span class="skill-pct">72%</span></div>
+              <div class="skill-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" aria-label="MongoDB proficiency 72%">
+                <div class="skill-fill" data-width="72"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group glass-card" data-aos>
+          <h3 class="skill-group-title">
+            <i class="fas fa-tools" aria-hidden="true"></i> Tools
+          </h3>
+          <div class="tools-tags">
+            <span class="tool-tag"><i class="fab fa-git-alt" aria-hidden="true"></i> Git</span>
+            <span class="tool-tag"><i class="fab fa-github" aria-hidden="true"></i> GitHub</span>
+            <span class="tool-tag"><i class="fas fa-project-diagram" aria-hidden="true"></i> n8n</span>
+            <span class="tool-tag"><i class="fas fa-robot" aria-hidden="true"></i> Chatbot Dev</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ PROJECTS ═══════════════════ -->
+  <section id="projects" class="section projects" aria-labelledby="projects-heading">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">What I've Built</p>
+        <h2 class="section-title" id="projects-heading">Projects</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card glass-card" data-aos aria-labelledby="proj1-title">
+          <div class="project-header">
+            <div class="project-icon" aria-hidden="true">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link" aria-label="View Real-Time Code Editor on GitHub" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="project-link" aria-label="View Live Demo of Real-Time Code Editor" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <p class="project-tagline">"Code Together. Build Faster."</p>
+          <h3 class="project-title" id="proj1-title">Real-Time Collaborative Code Editor</h3>
+          <p class="project-desc">A real-time collaborative coding platform that allows multiple developers to write, edit, and review code simultaneously. Built to enhance team productivity with instant code synchronization, live collaboration, and a seamless coding experience.</p>
+
+          <ul class="project-features" aria-label="Features">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Real-Time Collaboration</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Instant Code Synchronization</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Multi-user Editing</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Responsive Design</li>
+          </ul>
+
+          <div class="project-tech" aria-label="Technologies used">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            <span>Node.js</span><span>Express.js</span><span>Socket.IO</span>
+          </div>
+
+          <div class="project-actions">
+            <a href="#" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github" aria-hidden="true"></i> GitHub
+            </a>
+            <a href="#" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-play" aria-hidden="true"></i> Live Demo
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card glass-card" data-aos aria-labelledby="proj2-title">
+          <div class="project-header">
+            <div class="project-icon" aria-hidden="true">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link" aria-label="View Amazon Clone on GitHub" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="project-link" aria-label="View Live Demo of Amazon Clone" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <p class="project-tagline">"Shop Smarter. Experience Better."</p>
+          <h3 class="project-title" id="proj2-title">Amazon Clone</h3>
+          <p class="project-desc">A fully responsive e-commerce web application inspired by Amazon, featuring product browsing, search functionality, shopping cart management, and a modern user interface. Designed to replicate a real-world online shopping experience with performance and usability in mind.</p>
+
+          <ul class="project-features" aria-label="Features">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Product Listings</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Shopping Cart</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Search Functionality</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Responsive UI</li>
+          </ul>
+
+          <div class="project-tech" aria-label="Technologies used">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            <span>Node.js</span><span>Express.js</span>
+          </div>
+
+          <div class="project-actions">
+            <a href="#" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github" aria-hidden="true"></i> GitHub
+            </a>
+            <a href="#" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-play" aria-hidden="true"></i> Live Demo
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ EDUCATION + EXPERIENCE ═══════════════════ -->
+  <section id="education" class="section edu-exp" aria-labelledby="edu-heading">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">My Background</p>
+        <h2 class="section-title" id="edu-heading">Education & Experience</h2>
+      </div>
+
+      <div class="edu-exp-grid">
+
+        <div class="timeline-block glass-card" data-aos aria-label="Education">
+          <div class="timeline-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-badge">2022 – 2026</span>
+            <h3>Bachelor of Technology (B.Tech)</h3>
+            <p class="timeline-sub">Computer Science Engineering</p>
+            <p>Building a solid academic foundation in software engineering, data structures, algorithms, and system design.</p>
+          </div>
+        </div>
+
+        <div class="timeline-block glass-card" data-aos aria-label="Experience">
+          <div class="timeline-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-badge">Fresher</span>
+            <h3>Full Stack Developer</h3>
+            <p class="timeline-sub">Independent Projects & Self-Learning</p>
+            <p>Passionate Full Stack Developer currently building projects and expanding expertise in modern web technologies while preparing for professional opportunities.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CONTACT ═══════════════════ -->
+  <section id="contact" class="section contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title" id="contact-heading">Contact Me</h2>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-info" data-aos>
+          <p class="contact-intro">I'm currently open to new opportunities. Whether you have a question, a project idea, or just want to say hello — my inbox is open.</p>
+
+          <div class="contact-items">
+            <a href="mailto:rahulkumar829446@gmail.com" class="contact-item" aria-label="Email Rahul Kumar">
+              <span class="contact-item-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+              <div>
+                <span class="contact-item-label">Email</span>
+                <span class="contact-item-value">rahulkumar829446@gmail.com</span>
+              </div>
+            </a>
+
+            <a href="tel:+918294465067" class="contact-item" aria-label="Call Rahul Kumar">
+              <span class="contact-item-icon"><i class="fas fa-phone" aria-hidden="true"></i></span>
+              <div>
+                <span class="contact-item-label">Phone</span>
+                <span class="contact-item-value">+91 8294465067</span>
+              </div>
+            </a>
+
+<a href="https://www.linkedin.com/in/rahul-yadav-392305327" class="contact-item" target="_blank" rel="noopener noreferrer" aria-label="Visit Rahul's LinkedIn profile">
+              <span class="contact-item-icon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></span>
+              <div>
+                <span class="contact-item-label">LinkedIn</span>
+                <span class="contact-item-value">rahul-yadav-392305327</span>
+              </div>
+            </a>
+
+            <a href="https://www.instagram.com/r.k.yadav_____" class="contact-item" target="_blank" rel="noopener noreferrer" aria-label="Visit Rahul's Instagram">
+              <span class="contact-item-icon"><i class="fab fa-instagram" aria-hidden="true"></i></span>
+              <div>
+                <span class="contact-item-label">Instagram</span>
+                <span class="contact-item-value">r.k.yadav_____</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper glass-card" data-aos>
+          <form id="contactForm" class="contact-form" novalidate aria-label="Contact form">
+            <div class="form-group">
+              <label for="contactName">Your Name</label>
+              <input type="text" id="contactName" name="name" placeholder="John Doe" required autocomplete="name" aria-required="true" />
+              <span class="form-error" id="nameError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contactEmail">Your Email</label>
+              <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required autocomplete="email" aria-required="true" />
+              <span class="form-error" id="emailError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contactSubject">Subject</label>
+              <input type="text" id="contactSubject" name="subject" placeholder="Project Collaboration" />
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" name="message" placeholder="Tell me about your project or just say hi…" rows="5" required aria-required="true"></textarea>
+              <span class="form-error" id="messageError" role="alert"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <span id="submitText"><i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message</span>
+              <span id="submitSpinner" class="hidden" aria-hidden="true"><i class="fas fa-spinner fa-spin"></i></span>
+            </button>
+
+            <div id="formStatus" class="form-status" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#home" class="footer-logo" aria-label="Back to top">
+          <span class="logo-bracket">&lt;</span>RK<span class="logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer-copy">Designed &amp; Developed by <span>Rahul Kumar</span></p>
+        <div class="footer-socials" aria-label="Social media links">
+          <a href="https://www.linkedin.com/in/rahul-yadav-392305327" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.instagram.com/r.k.yadav_____" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:rahulkumar829446@gmail.com" aria-label="Email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════ BACK TO TOP ═══════════════════ -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
