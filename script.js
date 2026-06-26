@@ -290,90 +290,110 @@
    8. CONTACT FORM — Validation + Simulated Submit
 ═══════════════════════════════════════════════════════ */
 (function initContactForm() {
-  const form       = document.getElementById('contactForm');
-  if (!form) return;
 
-  const nameInput  = document.getElementById('contactName');
-  const emailInput = document.getElementById('contactEmail');
-  const msgInput   = document.getElementById('contactMessage');
-  const nameErr    = document.getElementById('nameError');
-  const emailErr   = document.getElementById('emailError');
-  const msgErr     = document.getElementById('messageError');
-  const statusEl   = document.getElementById('formStatus');
-  const submitBtn  = document.getElementById('submitBtn');
-  const submitText = document.getElementById('submitText');
-  const spinner    = document.getElementById('submitSpinner');
+    const form = document.getElementById("contactForm");
+    if (!form) return;
 
-  function isValidEmail(v) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
-  }
+    const nameInput = document.getElementById("contactName");
+    const emailInput = document.getElementById("contactEmail");
+    const msgInput = document.getElementById("contactMessage");
 
-  function setError(errEl, input, msg) {
-    errEl.textContent = msg;
-    input.style.borderColor = '#f87171';
-  }
+    const nameErr = document.getElementById("nameError");
+    const emailErr = document.getElementById("emailError");
+    const msgErr = document.getElementById("messageError");
 
-  function clearError(errEl, input) {
-    errEl.textContent = '';
-    input.style.borderColor = '';
-  }
+    const statusEl = document.getElementById("formStatus");
+    const submitBtn = document.getElementById("submitBtn");
+    const submitText = document.getElementById("submitText");
+    const spinner = document.getElementById("submitSpinner");
 
-  function validate() {
-    let ok = true;
-    if (nameInput.value.trim().length < 2) {
-      setError(nameErr, nameInput, 'Please enter your name (min. 2 characters).');
-      ok = false;
-    } else { clearError(nameErr, nameInput); }
+    function validEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
 
-    if (!isValidEmail(emailInput.value)) {
-      setError(emailErr, emailInput, 'Please enter a valid email address.');
-      ok = false;
-    } else { clearError(emailErr, emailInput); }
+    function validate() {
 
-    if (msgInput.value.trim().length < 10) {
-      setError(msgErr, msgInput, 'Message must be at least 10 characters.');
-      ok = false;
-    } else { clearError(msgErr, msgInput); }
+        let valid = true;
 
-    return ok;
-  }
+        nameErr.textContent = "";
+        emailErr.textContent = "";
+        msgErr.textContent = "";
 
-  // Inline validation
-  [nameInput, emailInput, msgInput].forEach(input => {
-    input.addEventListener('blur', validate);
-    input.addEventListener('input', validate);
-  });
+        if (nameInput.value.trim().length < 2) {
+            nameErr.textContent = "Please enter your name.";
+            valid = false;
+        }
 
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    if (!validate()) return;
+        if (!validEmail(emailInput.value.trim())) {
+            emailErr.textContent = "Enter a valid email.";
+            valid = false;
+        }
 
-    // Loading state
-    submitText.classList.add('hidden');
-    spinner.classList.remove('hidden');
-    submitBtn.disabled = true;
-    statusEl.className = 'form-status';
-    statusEl.textContent = '';
+        if (msgInput.value.trim().length < 10) {
+            msgErr.textContent = "Message should be at least 10 characters.";
+            valid = false;
+        }
 
-    // Simulate sending (replace with actual fetch to your backend / EmailJS)
-    await new Promise(resolve => setTimeout(resolve, 1800));
+        return valid;
+    }
 
-    // Success
-    submitText.classList.remove('hidden');
-    spinner.classList.add('hidden');
-    submitBtn.disabled = false;
-    statusEl.className = 'form-status success';
-    statusEl.textContent = '✓ Message sent! I\'ll get back to you soon.';
-    form.reset();
-    [nameErr, emailErr, msgErr].forEach(el => el.textContent = '');
-    [nameInput, emailInput, msgInput].forEach(el => el.style.borderColor = '');
+    form.addEventListener("submit", async function (e) {
 
-    // Clear status after 5 s
-    setTimeout(() => {
-      statusEl.className = 'form-status';
-      statusEl.textContent = '';
-    }, 5000);
-  });
+        e.preventDefault();
+
+        if (!validate()) return;
+
+        submitBtn.disabled = true;
+        submitText.classList.add("hidden");
+        spinner.classList.remove("hidden");
+
+        statusEl.className = "form-status";
+        statusEl.textContent = "";
+
+        const formData = new FormData(form);
+
+        try {
+
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+
+                statusEl.className = "form-status success";
+                statusEl.innerHTML = "✅ Message sent successfully!";
+
+                form.reset();
+
+            } else {
+
+                statusEl.className = "form-status error";
+                statusEl.innerHTML = "❌ " + result.message;
+            }
+
+        } catch (error) {
+
+            statusEl.className = "form-status error";
+            statusEl.innerHTML = "❌ Something went wrong. Please try again.";
+
+        }
+
+        submitBtn.disabled = false;
+        submitText.classList.remove("hidden");
+        spinner.classList.add("hidden");
+
+        setTimeout(() => {
+
+            statusEl.textContent = "";
+            statusEl.className = "form-status";
+
+        }, 5000);
+
+    });
+
 })();
 
 
